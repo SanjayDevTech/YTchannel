@@ -27,7 +27,7 @@ import YTchannel.YT as yt
 channel = yt.Channel()
 ```
 
-### Calling with a Id and API key
+#### Calling with a Id and API key
 The first parameter must be the Channel id
 Check below example
 https://www.youtube.com/channel/UC_channel_id
@@ -42,7 +42,7 @@ except ConnectionError:
 except:
   #Something went wrong
 ```
-### Check if the request is success
+#### Check if the request is success
 ```python
 result = channel.getChannel() #this will return all details in a dictionary
 if result['result'] == 'OK':
@@ -51,7 +51,7 @@ else:
   #Something wrong like - no channel found or invalid api key
   #use result['code'] to get the error code or result['message'] to know the message
 ```
-### How to get details
+#### How to get details
 ```python
 print(result) #this will print all the details of a channel in a dictionary
 ```
@@ -60,7 +60,7 @@ print(result) #this will print all the details of a channel in a dictionary
 video = yt.Video()
 ```
 
-### Calling with a Id and API key
+#### Calling with a Id and API key
 The first parameter must be the video id
 Check below example
 https://www.youtube.com/watch?v=video_id
@@ -75,7 +75,7 @@ except ConnectionError:
 except:
   #Something went wrong
 ```
-### Check if the request is success
+#### Check if the request is success
 ```python
 resultVideo = video.getVideo() #this will return all details in a dictionary
 if resultVideo['result'] == 'OK':
@@ -84,7 +84,7 @@ else:
   #Something wrong like - no video found or invalid api key
   #use resultVideo['code'] to get the error code or resultVideo['message'] to know the message
 ```
-### How to get details
+#### How to get details
 ```python
 print(resultVideo) #this will print all the details of a video in a dictionary
 ```
