@@ -1,12 +1,10 @@
 # YTchannel
-YouTube channel details extractor
+YouTube channel & video details extractor
 
-### Features
+## Features
 Retrieve:-
-- Youtube Channel name
-- Icon, Channel art
-- Subs if not hidden
-- List no. of videos
+- Youtube Channel details
+- Youtube Video details
 
 ## Requirements
 You need to install requests module
@@ -21,22 +19,22 @@ pip install YTchannel
 
 ## Importing
 ```python
-from YTchannel.YTchannel import YTchannel
+import YTchannel.YT as yt
 ```
 
-## Creating an Object
+## For Channel details
 ```python
-yt = YTchannel()
+channel = yt.Channel()
 ```
 
-## Calling with a Id and API key
+### Calling with a Id and API key
 The first parameter must be the Channel id
 Check below example
 https://www.youtube.com/channel/UC_channel_id
 here in this example the channel id is **UC_channel_id**
 ```python
 try:
-  yt.start(UC_channel_id,YOUR_API_KEY)
+  channel.startChannel(UC_channel_id,YOUR_API_KEY)
 except KeyError:
   #Invalid channel id
 except ConnectionError:
@@ -44,27 +42,52 @@ except ConnectionError:
 except:
   #Something went wrong
 ```
-## Check if the request is success
+### Check if the request is success
 ```python
-result = yt.getResult() #this will return all details in a dictionary
+result = channel.getChannel() #this will return all details in a dictionary
 if result['result'] == 'OK':
   #No problem do your thing
 else:
   #Something wrong like - no channel found or invalid api key
   #use result['code'] to get the error code or result['message'] to know the message
 ```
-## How to get details
+### How to get details
 ```python
-title = result['title'] #or use title = yt.title
-des = result['des'] #or use des = yt.des
-icon = result['icon'] #or use icon = yt.icon
-subs = result['subs'] #or use subs = yt.subs
-channelArt = result['channelArt'] #or use channelArt = yt.channelArt
-videos = result['videos'] #or use videos = yt.videos
-subhidden = result['subs_hidden'] #or use subhidden = yt.subhidden
-country = result['country'] #or use country = yt.country
+print(result) #this will print all the details of a channel in a dictionary
+```
+## For video details
+```python
+video = yt.Video()
 ```
 
+### Calling with a Id and API key
+The first parameter must be the video id
+Check below example
+https://www.youtube.com/watch?v=video_id
+here in this example the video id is **video_id**
+```python
+try:
+  video.startVideo(video_id,YOUR_API_KEY)
+except KeyError:
+  #Invalid video id
+except ConnectionError:
+  #Connection error
+except:
+  #Something went wrong
+```
+### Check if the request is success
+```python
+resultVideo = video.getVideo() #this will return all details in a dictionary
+if resultVideo['result'] == 'OK':
+  #No problem do your thing
+else:
+  #Something wrong like - no video found or invalid api key
+  #use resultVideo['code'] to get the error code or resultVideo['message'] to know the message
+```
+### How to get details
+```python
+print(resultVideo) #this will print all the details of a video in a dictionary
+```
 ## Any issues?
 Create an issue on github
 

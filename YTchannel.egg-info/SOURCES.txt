@@ -1,6 +1,6 @@
 README.md
 setup.py
-YTchannel/YTchannel.py
+YTchannel/YT.py
 YTchannel/__init__.py
 YTchannel.egg-info/PKG-INFO
 YTchannel.egg-info/SOURCES.txt

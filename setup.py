@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="YTchannel",
-    version="0.0.3",
+    version="0.0.6",
     author="Sanjay Developer",
     author_email="sureshsanjay805@gmail.com",
-    description="YouTube channel details extractor",
+    description="YouTube channel & video details extractor",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/SanjayDevTech/YTchannel",
