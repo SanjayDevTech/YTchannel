@@ -2,10 +2,17 @@
 YouTube channel details extractor
 
 ### Features
-- Retrieve Youtube Channel name
+Retrieve:-
+- Youtube Channel name
 - Icon, Channel art
 - Subs if not hidden
 - List no. of videos
+
+## Requirements
+You need to install requests module
+```
+pip install requests
+```
 
 ## Installation
 ```
