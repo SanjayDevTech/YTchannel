@@ -1,8 +1,0 @@
-README.md
-setup.py
-YTchannel/YT.py
-YTchannel/__init__.py
-YTchannel.egg-info/PKG-INFO
-YTchannel.egg-info/SOURCES.txt
-YTchannel.egg-info/dependency_links.txt
-YTchannel.egg-info/top_level.txt

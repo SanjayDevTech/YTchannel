@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="YTchannel",
-    version="0.0.6",
+    version="0.0.7",
     author="Sanjay Developer",
     author_email="sureshsanjay805@gmail.com",
     description="YouTube channel & video details extractor",
