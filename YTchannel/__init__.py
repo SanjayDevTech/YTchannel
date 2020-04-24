@@ -17,8 +17,9 @@ class YTdownloader:
             res =re.search(YTdownloader.__pattern,video_url)
             if res == None:
                 raise KeyError('Invalid Url')
-        	self.__video_id = res[1]
-        self.__URL = "https://www.youtube.com/get_video_info?video_id="+self.__video_id+"&cpn=CouQulsSRICzWn5E&eurl&el=adunit"
+                self.__video_id = res[1]
+
+        self.__URL = "https://www.youtube.com/get_video_info?video_id="+ self.__video_id +"&cpn=CouQulsSRICzWn5E&eurl&el=adunit"
         try:
             self.__response = requests.get(self.__URL)
         except:
