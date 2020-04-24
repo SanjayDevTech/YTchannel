@@ -17,8 +17,8 @@ class YTdownloader:
             res =re.search(YTdownloader.__pattern,video_url)
             if res == None:
                 raise KeyError('Invalid Url')
-        self.__video_id = res[1]
-        self.__URL = "https://www.youtube.com/get_video_info?video_id="+res[1]+"&cpn=CouQulsSRICzWn5E&eurl&el=adunit"
+        	self.__video_id = res[1]
+        self.__URL = "https://www.youtube.com/get_video_info?video_id="+self.__video_id+"&cpn=CouQulsSRICzWn5E&eurl&el=adunit"
         try:
             self.__response = requests.get(self.__URL)
         except:
@@ -30,7 +30,7 @@ class YTdownloader:
                 self.__data = urllib.parse.parse_qs(self.__response.text)
                 self.__videoData = eval(self.__data['player_response'][0].replace(":true",":True").replace(":false",":False"))
                 if 'streamingData' not in self.__videoData:
-                    raise KeyError("Can't find video")
+                    raise IndexError("Can't find video")
                 self.__streamingData = self.__videoData['streamingData']
                 self.__streamingDataFormats = self.__streamingData['formats'];
                 self.results = []
